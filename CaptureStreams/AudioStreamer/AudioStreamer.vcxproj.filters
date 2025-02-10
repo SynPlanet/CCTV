@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Reader_MP3">
+      <UniqueIdentifier>{c32478df-a5ce-49f3-a51b-ae649f0ac7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Writer_MP3">
+      <UniqueIdentifier>{6d7c6847-8c1a-48dc-b2ae-10d6570e05cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Writer_MP3\LAME">
+      <UniqueIdentifier>{90761b9c-c776-4784-80f7-57cab20a8608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Writer_MP3\Asio">
+      <UniqueIdentifier>{b5fa77d4-d215-4042-b26b-42a7829ebf2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="AudioStreamer.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioStreamer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioStreamerData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioStreamReader.h">
+      <Filter>Source Files\Reader_MP3</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioStreamWriter.h">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRecording\BladeMP3EncDLL.h">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRecording\mp3_simple.h">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRecording\sync_simple.h">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRecording\waveIN_simple.h">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\asio.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\asiodrivers.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\asiodrvr.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\asiolist.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\asiosys.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\ginclude.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\iasiodrv.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="asio\iasiothiscallresolver.h">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClInclude>
+    <ClInclude Include="AsioWriter.h">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClInclude>
+    <ClInclude Include="Writer_MP3.h">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CaptureIP\TestTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioStreamer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioStreamReader.cpp">
+      <Filter>Source Files\Reader_MP3</Filter>
+    </ClCompile>
+    <ClCompile Include="ASReaderolderParser.cpp">
+      <Filter>Source Files\Reader_MP3</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioStreamWriter.cpp">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioRecording\mp3_simple.cpp">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioRecording\waveIN_simple.cpp">
+      <Filter>Source Files\Writer_MP3\LAME</Filter>
+    </ClCompile>
+    <ClCompile Include="asio\asio.cpp">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClCompile>
+    <ClCompile Include="asio\asiodrivers.cpp">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClCompile>
+    <ClCompile Include="asio\asiolist.cpp">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClCompile>
+    <ClCompile Include="asio\iasiothiscallresolver.cpp">
+      <Filter>Source Files\Writer_MP3\Asio</Filter>
+    </ClCompile>
+    <ClCompile Include="AsioWriter.cpp">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClCompile>
+    <ClCompile Include="Writer_MP3.cpp">
+      <Filter>Source Files\Writer_MP3</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
