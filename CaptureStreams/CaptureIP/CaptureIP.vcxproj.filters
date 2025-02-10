@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="IP_Cameras">
+      <UniqueIdentifier>{8217be04-937b-49e2-bdb6-60b6f77ad123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Proccessor">
+      <UniqueIdentifier>{6e5ae633-e24f-4634-828e-51a12ec953b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dlt">
+      <UniqueIdentifier>{6255a815-03a7-46a2-8945-ce87a869953e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IP_Cameras\NetGetControl">
+      <UniqueIdentifier>{da5333d3-be83-419c-a58e-e9ca5aefd167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IP_Cameras\Timer">
+      <UniqueIdentifier>{49a2c22e-c37e-4418-9821-afe1372d0b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IP_Cameras\Player">
+      <UniqueIdentifier>{649dce11-e5f0-4ef6-810c-3a1d781c6b91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logs">
+      <UniqueIdentifier>{4d088175-0a7e-4e2d-9999-0c76d87553c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{d391c761-4295-4a00-8fe8-7b587d00af57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ControlsCameraDevice">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="IP_Cameras\ONVIF">
+      <UniqueIdentifier>{cfd6e048-6c6e-46df-be1f-4b0d7dc10b65}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="CaptureIP.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptureIP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraIP.h">
+      <Filter>IP_Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonIP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Proccesor.h">
+      <Filter>Proccessor</Filter>
+    </ClInclude>
+    <ClInclude Include="WriterMPEG.h">
+      <Filter>IP_Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcOpenCV.h">
+      <Filter>IP_Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="JoyControl.h">
+      <Filter>ControlsCameraDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="NetSendCmr360.h">
+      <Filter>Dlt</Filter>
+    </ClInclude>
+    <ClInclude Include="NetPTZControl.h">
+      <Filter>ControlsCameraDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetControlReceive.h">
+      <Filter>IP_Cameras\NetGetControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonTimerThread.h">
+      <Filter>IP_Cameras\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Synh_Objs.h">
+      <Filter>IP_Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcPlayerOCV.h">
+      <Filter>IP_Cameras\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaMoviesHDD.h">
+      <Filter>IP_Cameras\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Logs</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlHDD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Onvif\ConnectOnvif.h">
+      <Filter>IP_Cameras\ONVIF</Filter>
+    </ClInclude>
+    <ClInclude Include="Lic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptureIP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraIP.cpp">
+      <Filter>IP_Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="Proccesor.cpp">
+      <Filter>Proccessor</Filter>
+    </ClCompile>
+    <ClCompile Include="WriterMPEG.cpp">
+      <Filter>IP_Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcOpenCV.cpp">
+      <Filter>IP_Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="JoyControl.cpp">
+      <Filter>ControlsCameraDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="NetSendCmr360.cpp">
+      <Filter>Dlt</Filter>
+    </ClCompile>
+    <ClCompile Include="NetPTZControl.cpp">
+      <Filter>ControlsCameraDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="NetControlReceive.cpp">
+      <Filter>IP_Cameras\NetGetControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonTimerThread.cpp">
+      <Filter>IP_Cameras\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcPlayerOCV.cpp">
+      <Filter>IP_Cameras\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MetaMoviesHDD.cpp">
+      <Filter>IP_Cameras\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Logs</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlHDD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioImport.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Onvif\ConnectOnvif.cpp">
+      <Filter>IP_Cameras\ONVIF</Filter>
+    </ClCompile>
+    <ClCompile Include="Lic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+LIBRARY "CaptureIP"
+
+EXPORTS
+
+	CreateStreamIP
+	CreateStreamFile
+	GetBMP_NmbCamera
+	GetParamsCamera
+	WriteVideoStream = UpdataStateStream
+	SetBitImgCamera
+	ReleaseCameraIP_Nmb
+	SetCamera_360
+	GetCamera_360
+	CallBackFunc_PlayerState
+	CallBackFunc_JoyControl
+	CallBackFunc_GetTimePlayer
+	CallBackFunc_SetMovieFolder
+	Joystick_Control
+	SetPathsVideo
+	SetPathsAudio
+	Initialize_ALL
+	Release_ALL
+	SetPort_VideoControl
+	SetCurrentCamera
+	SetTimeRecMinutes
+	SetTimePlay
+	GetTotalTimePlay
+	SetPlayerManualControl
+	SetAudioDevice
+	SetTypeInterface
