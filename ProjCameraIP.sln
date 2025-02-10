@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AudioStreamer", "CaptureStreams\AudioStreamer\AudioStreamer.vcxproj", "{E2819E55-0155-4EF0-B463-EA670F890A0C}"
+	GlobalSection(PlasticSccProperties) = preSolution
+		ControlledByPlastic = True
+		SccProvider = Plastic SCM
+	EndGlobalSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CaptureIP", "CaptureStreams\CaptureIP\CaptureIP.vcxproj", "{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}"
+	GlobalSection(PlasticSccProperties) = preSolution
+		ControlledByPlastic = True
+		SccProvider = Plastic SCM
+	EndGlobalSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ptz", "CaptureStreams\Ptz\Ptz.vcxproj", "{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}"
+	GlobalSection(PlasticSccProperties) = preSolution
+		ControlledByPlastic = True
+		SccProvider = Plastic SCM
+	EndGlobalSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Debug|Win32.Build.0 = Debug|Win32
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Release|Win32.ActiveCfg = Release|Win32
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Release|Win32.Build.0 = Release|Win32
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Template|Win32.ActiveCfg = Release|Win32
+		{E2819E55-0155-4EF0-B463-EA670F890A0C}.Template|Win32.Build.0 = Release|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Debug|Win32.Build.0 = Debug|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Release|Win32.ActiveCfg = Release|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Release|Win32.Build.0 = Release|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Template|Win32.ActiveCfg = Release|Win32
+		{B09A2F62-3E76-49E4-9F9B-EC0214003BE4}.Template|Win32.Build.0 = Release|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Debug|Win32.Build.0 = Debug|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Release|Win32.ActiveCfg = Release|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Release|Win32.Build.0 = Release|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Template|Win32.ActiveCfg = Template|Win32
+		{1F594CA6-C60F-4368-9DC2-EDC548CFDAD3}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6085A476-6E68-4EB5-8CB1-60C8AD0F6F48}
+	EndGlobalSection
+	GlobalSection(PlasticSccProperties) = preSolution
+		ControlledByPlastic = True
+		SccProvider = Plastic SCM
+	EndGlobalSection
+EndGlobal
