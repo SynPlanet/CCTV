@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Cam.Logo3D"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:Cam.Text3D"
+             Height="35" Width="80">
+    <Viewport3D Height="35"  Width="100">
+        <control:RibbonText Text="3D" FontFamily="Times New Roman" Depth="1.55" FontSize="2">
+            <control:RibbonText.Material>
+                <DiffuseMaterial Brush="{StaticResource ElementBorderBrush}"/>
+            </control:RibbonText.Material>
+            <control:RibbonText.BackMaterial>
+                <DiffuseMaterial Brush="{StaticResource BackgroundWindowBrush}" />
+            </control:RibbonText.BackMaterial>
+            <control:RibbonText.Transform>
+                <RotateTransform3D>
+                    <RotateTransform3D.Rotation>
+                        <AxisAngleRotation3D x:Name="angle"  Axis="0,1,0" Angle="0"/>
+                    </RotateTransform3D.Rotation>
+                </RotateTransform3D>
+            </control:RibbonText.Transform>
+        </control:RibbonText>
+        <ModelVisual3D>
+            <ModelVisual3D.Content>
+                <Model3DGroup>
+                    <AmbientLight Color="#404040" />
+                    <DirectionalLight Color="#C0C0C0" 
+                        Direction="2 -3 -1" />
+                </Model3DGroup>
+            </ModelVisual3D.Content>
+        </ModelVisual3D>
+        <Viewport3D.Camera>
+            <PerspectiveCamera Position="-3 0 8" UpDirection="0 1 0"
+                               LookDirection="1 -0.36 -2" FieldOfView="45" />
+        </Viewport3D.Camera>
+    </Viewport3D>
+</UserControl>

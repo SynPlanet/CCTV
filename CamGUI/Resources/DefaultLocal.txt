@@ -1,0 +1,66 @@
+﻿MainWindow_Message0		CameraViewer
+MainWindow_Message1		Camera slots:
+MainWindow_Message2		x4+
+MainWindow_Message3		x4
+MainWindow_Message4		xN
+MainWindow_Message5		Admin
+MainWindow_Message6		Logout
+MainWindow_Message7		Add camera
+MainWindow_Message8		Remove camera
+MainWindow_Message9		Settings
+MainWindow_Message10	Rec
+MainWindow_Message11	Archive
+MainWindow_Message12	Online
+MainWindow_Message13	Browse
+MainWindow_Message14	Manual
+
+Monitor_Message0		Information
+Monitor_Message1		Parameters
+Monitor_Message2		Controls
+
+PanelInformation_Message0		Name:
+PanelInformation_Message1		<IP>:<Port>:
+PanelInformation_Message2		UserName:
+PanelInformation_Message3		Password:
+PanelInformation_Message4		Save
+PanelInformation_Message5		Cancel
+
+EmulationCameraManager_Message0		ERROR
+EmulationCameraManager_Message1		Hz
+
+ParametersControl_Message0		Content:
+ParametersControl_Message1		Width:
+ParametersControl_Message2		Height:
+ParametersControl_Message3		Frequency:
+ParametersControl_Message4		Indefinite
+
+ModifyControl_Message0		Information
+ModifyControl_Message1		360 ⁰
+ModifyControl_Message2		Rec
+
+AdminWIndow_Message0	Admin
+AdminWIndow_Message1	OK
+AdminWIndow_Message2	Cancel
+AdminWIndow_Message3	Password incorrect
+AdminWIndow_Message4	Error
+
+Settings_Message0		Settings
+Settings_Message1		Path to save:
+Settings_Message2		Port:
+Settings_Message3		Save	
+Settings_Message4		Exit
+Settings_Message5		Archive startup
+Settings_Message6		Path to play
+Settings_Message7		Delete
+Settings_Message8		Profile
+Settings_Message9		Video
+Settings_Message10		Audio
+Settings_Message11		Audio enable
+
+Audio_Message0			Audio
+
+Memory_XML_Message0		Name the audio device can not be empty
+Memory_XML_Message1		Audio device names must be unique
+Memory_XML_Message2		In audio device the Value property is not correct
+Memory_XML_Message3     In audio device the Number property is not correct
+Memory_XML_Message4     Audio device the Number property must be unique

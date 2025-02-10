@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Cam.PanelInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:Cam"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" MaxWidth="650" Width="{Binding RelativeSource={RelativeSource AncestorLevel=1, AncestorType=TabControl, Mode=FindAncestor}, Path=ActualWidth}"  HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message0}" Margin="3" Style="{StaticResource HeaderTextBaseStyle}"/>
+            <TextBox Name="name" Style="{StaticResource TextBoxStyle}"  Grid.Column="1" TextAlignment="Center" Text="{Binding Path=Name, Mode=OneWay}" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+            <TextBlock Grid.Row="1"  Text="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message1}" Margin="3" Style="{StaticResource HeaderTextBaseStyle}"/>
+            <TextBox x:Name="address" Style="{StaticResource TextBoxStyle}" TextAlignment="Center" Grid.Row="1"  Grid.Column="1" Text="{Binding Path=Address, Mode=OneWay}" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+            <TextBlock Grid.Row="0" Grid.Column="2"  Text="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message2}" Margin="3" Style="{StaticResource HeaderTextBaseStyle}"/>
+            <TextBox x:Name="userName" Style="{StaticResource TextBoxStyle}" TextAlignment="Center" Grid.Row="0"  Grid.Column="3" Text="{Binding Path=UserName, Mode=OneWay}" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+            <TextBlock Grid.Row="1" Grid.Column="2"  Text="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message3}" Margin="3" Style="{StaticResource HeaderTextBaseStyle}"/>
+            <PasswordBox x:Name="password" Style="{StaticResource PasswordBox}"  Grid.Row="1"  Grid.Column="3" controls:PasswordHelper.Attach="True"  controls:PasswordHelper.Password="{Binding Path=Password, Mode=OneWay}"  PasswordChanged="password_PasswordChanged"  PreviewKeyDown="TextBox_PreviewKeyDown"/>
+            <Grid Grid.Row="3" Grid.ColumnSpan="4" Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnSave" HorizontalAlignment="Right"  Style="{StaticResource ButtonBaseStyle}"  Grid.Column="0" Width="150" Height="40" Content="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message4}" Visibility="Hidden" Click="btnSave_Click"/>
+                <Button x:Name="btnCancel" HorizontalAlignment="Left"  Style="{StaticResource ButtonBaseStyle}" Grid.Column="2" Width="150" Height="40" Content="{Binding Source={x:Static controls:Local.Message}, Path=PanelInformation_Message5}" Visibility="Hidden" Click="btnCancel_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

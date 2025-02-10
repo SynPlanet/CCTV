@@ -1,0 +1,273 @@
+﻿<Window x:Class="Cam.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="clr-namespace:Cam"
+        Title="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message0}" MinHeight="768" MinWidth="1024"  Height="350" Width="525" Loaded="Window_Loaded" Background="{StaticResource BackgroundWindowBrush}" Closing="Window_Closing">
+    <Grid>
+        <Border Name="fullScreen" Visibility="Hidden" Background="Black" MouseLeftButtonDown="fullScreen_MouseLeftButtonDown">
+            
+        </Border>
+        <Grid x:Name="panel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="54"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+          
+            <Border Grid.ColumnSpan="2" BorderBrush="{StaticResource ElementBorderBrush}" BorderThickness="{StaticResource BorderThicknessPanel}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.28*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="2.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton x:Name="manual"  Height="43" Margin="2" Grid.Column="2" Width="120" HorizontalAlignment="Right"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message14}" Checked="CheckManual"  Unchecked="UncheckManual">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton"  BasedOn="{StaticResource ToggleButtonStyle}">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsArchive}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message1}" VerticalAlignment="Center" Margin="15,0,10,0" Style="{StaticResource HeaderTextStyle}"/>
+                            <RadioButton x:Name="slot1"  Margin="2" Click="Button_Click_3"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message2}" IsChecked="True" Style="{StaticResource SlotStyle}"/>
+                            <RadioButton x:Name="slot2" Margin="2" Click="Button_Click"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message3}"  Style="{StaticResource SlotStyle}"/>
+                            <RadioButton x:Name="slot3" Margin="2" Click="Button_Click_1" Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message4}" Style="{StaticResource SlotStyle}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Margin="3"  HorizontalAlignment="Center" Click="AdminButtonClick">
+                            <Button.Style>
+                                <Style TargetType="Button"  BasedOn="{StaticResource AdminButtonStyle}">
+                                    <Setter Property="Content" Value="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message5}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsAdmin}" Value="true">
+                                            <Setter Property="Content" Value="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message6}"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=IsArchive}" Value="true">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Grid Grid.Column="2" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0"  HorizontalAlignment="Right"  Margin="3" Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message7}" Click="AddCamera" Style="{StaticResource AddCameraStyle}"/>
+                            <Button Grid.Column="1" HorizontalAlignment="Left"  Margin="3" Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message8}" Click="RemoveCamera" Style="{StaticResource RemoveCameraStyle}"/>
+                            
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsAdmin}" Value="false">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Height="40"  Margin="2"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message9}" Click="Button_Click_2" HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsAdmin}" Value="false">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        
+                        <Button Height="40" Margin="2"  Grid.Column="1"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message11}" Click="Button_Click_4"  HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Path=IsAdmin}" Value="false"/>
+                                                <Condition Binding="{Binding Path=IsArchive}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <MultiDataTrigger.Setters>
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </MultiDataTrigger.Setters>
+                                        </MultiDataTrigger>
+                                        <DataTrigger Binding="{Binding Path=IsRec}" Value="True">
+                                            <Setter Property="IsEnabled" Value="False"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Height="40"  Margin="2"  Grid.Column="1" Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message12}" Click="Button_Click_6"  HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Path=IsAdmin}" Value="false"/>
+                                                <Condition Binding="{Binding Path=IsArchive}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <MultiDataTrigger.Setters>
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </MultiDataTrigger.Setters>
+                                        </MultiDataTrigger>
+                                        <DataTrigger Binding="{Binding Path=IsPlay}" Value="True">
+                                            <Setter Property="IsEnabled" Value="False"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Grid.Column="1" Click="Rec_Click" Content="{Binding}"  Height="40" HorizontalAlignment="Center" >
+                        <Button.Style>
+                            <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <DockPanel>
+                                                <Image DockPanel.Dock="Left" Height="15" Width="15" Margin="5">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Source" Value="{StaticResource LampOff}"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding Path=IsRec, Mode=OneWay}" Value="True">
+                                                                    <Setter Property="Source" Value="{StaticResource LampOn}"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                    <TextBlock Margin="5" Text="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message10}" Style="{StaticResource WhiteTextStyle}" FontSize="18"/>
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsAdmin}" Value="false">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                        <Button Height="40" Grid.Column="0"  Margin="2"  Content="{Binding Source={x:Static control:Local.Message}, Path=MainWindow_Message13}" Click="Button_Click_5"  HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsArchive}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=IsPlay}" Value="True">
+                                            <Setter Property="IsEnabled" Value="False"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.ColumnSpan="2" SizeChanged="Grid_SizeChanged">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Name="leftCell"  Width="460"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Name="rightCell" Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsAdmin}" Value="true">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=IsArchive}" Value="true">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <control:Clock Grid.Column="1"/>
+                        <Border Grid.Column="2"  BorderBrush="{StaticResource ButtonBorderBrush}" Background="{StaticResource BackgroundElementsBrush}"  BorderThickness="2" Margin="5" Padding="3">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Source={x:Static control:Local.Message}, Path=Settings_Message8}" VerticalAlignment="Center" Style="{StaticResource WhiteTextStyle}" Margin="5"/>
+                                <ComboBox Grid.Column="1"  x:Name="test"  IsReadOnly="True" IsEditable="False" Style="{StaticResource ComboBoxStyle}"  ItemsSource="{Binding Source={x:Static control:Memory.Instance}, Path=ProfileCollection}" SelectedItem="{Binding Source={x:Static control:Memory.Instance}, Path=CurrentProfile}" SelectionChanged="test_SelectionChanged"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+            <control:Monitor x:Name="monitor" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" ChangeMode="monitor_ChangeMode"/>
+
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource ElementBorderBrush}" BorderThickness="2,0,2,2">
+                <DockPanel>
+                    <Border DockPanel.Dock="Bottom">
+                        <control:Clock DockPanel.Dock="Bottom" BorderBrush="{StaticResource ElementBorderBrush}" BorderThickness="0,2,0,0">
+                            <control:Clock.Style>
+                                <Style TargetType="control:Clock">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsArchive, Mode = OneWay}" Value="true">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </control:Clock.Style>
+                        </control:Clock>
+                    </Border>
+                    <control:Joystick Press="Joystick_Press"  DataContext="{Binding Path=CurrentImageCamera}"  DockPanel.Dock="Bottom"  Margin="3"  Grid.Column="1" Grid.Row="2" Width="{Binding RelativeSource={RelativeSource AncestorLevel=1, AncestorType=Window,  Mode=FindAncestor}, Path=ActualWidth,Converter={StaticResource joystickWidthConverter}}">
+                        <control:Joystick.Style>
+                            <Style TargetType="control:Joystick">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=Has3D}" Value="true">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </control:Joystick.Style>
+                    </control:Joystick>
+                    <ListBox x:Name="listCamera" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Path=ImageCameraCollection}" SelectionChanged="ListBox_SelectionChanged" Style="{StaticResource ListStyle}"/>
+                </DockPanel>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsAdmin}" Value="true">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=IsArchive}" Value="true">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

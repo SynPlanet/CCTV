@@ -1,0 +1,136 @@
+﻿<Window x:Class="Cam.Audio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Cam"
+        Title="{Binding Source={x:Static controls:Local.Message}, Path=Audio_Message0}" Height="300" MinWidth="250" Background="{StaticResource BackgroundWindowBrush}" Loaded="Window_Loaded"  Closing="Window_Closing" SizeToContent="WidthAndHeight" LocationChanged="Window_LocationChanged" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged" >
+    <Grid IsEnabled="{Binding Path=IsAudioDeviceEnable}">
+        <ListBox Width="NaN" ItemsSource="{Binding Path=AudioDeviceCollection}" HorizontalAlignment="Left" Margin="10,0,0,0" DataContext="{Binding Path=CurrentProfile}">
+            <ListBox.Style>
+                <Style BasedOn="{StaticResource ListStyle}" TargetType="ListBox">
+                    <Setter Property="ItemContainerStyle">
+                        <Setter.Value>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <ContentPresenter/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <ToggleButton Content="{Binding Path=Name}" Height="50" IsChecked="{Binding Path=IsEnable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Checked">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="ToggleButton">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border Background="Transparent">
+                                                            <ContentPresenter/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <DockPanel>
+                                                            <Image DockPanel.Dock="Left" Width="25" Height="25" Margin="5">
+                                                                <Image.Style>
+                                                                    <Style TargetType="Image">
+                                                                        <Setter Property="Source">
+                                                                            <Setter.Value>
+                                                                                <DrawingImage>
+                                                                                    <DrawingImage.Drawing>
+                                                                                        <GeometryDrawing Brush="{StaticResource WhiteTextBrush}">
+                                                                                            <GeometryDrawing.Pen>
+                                                                                                <Pen Brush="{StaticResource ButtonBorderBrush}" Thickness="2"/>
+                                                                                            </GeometryDrawing.Pen>
+                                                                                            <GeometryDrawing.Geometry>
+                                                                                                <PathGeometry>
+                                                                                                    <PathGeometry.Figures>
+                                                                                                        <PathFigure StartPoint="0 0" IsFilled="True" IsClosed="True">
+                                                                                                            <LineSegment Point="12 0"/>
+                                                                                                            <LineSegment Point="12 12"/>
+                                                                                                            <LineSegment Point="0 12"/>
+                                                                                                        </PathFigure>
+                                                                                                    </PathGeometry.Figures>
+                                                                                                </PathGeometry>
+                                                                                            </GeometryDrawing.Geometry>
+                                                                                        </GeometryDrawing>
+                                                                                    </DrawingImage.Drawing>
+                                                                                </DrawingImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorLevel=1, AncestorType=ToggleButton, Mode=FindAncestor},Path=IsChecked}" Value="true">
+                                                                                <Setter Property="Source">
+                                                                                    <Setter.Value>
+                                                                                        <DrawingImage>
+                                                                                            <DrawingImage.Drawing>
+                                                                                                <DrawingGroup>
+                                                                                                    <GeometryDrawing Brush="{StaticResource WhiteTextBrush}">
+                                                                                                        <GeometryDrawing.Pen>
+                                                                                                            <Pen Brush="{StaticResource ButtonBorderBrush}" Thickness="2"/>
+                                                                                                        </GeometryDrawing.Pen>
+                                                                                                        <GeometryDrawing.Geometry>
+                                                                                                            <PathGeometry>
+                                                                                                                <PathGeometry.Figures>
+                                                                                                                    <PathFigure StartPoint="0 0" IsFilled="True" IsClosed="True">
+                                                                                                                        <LineSegment Point="13 0"/>
+                                                                                                                        <LineSegment Point="13 13"/>
+                                                                                                                        <LineSegment Point="0 13"/>
+                                                                                                                    </PathFigure>
+                                                                                                                </PathGeometry.Figures>
+                                                                                                            </PathGeometry>
+                                                                                                        </GeometryDrawing.Geometry>
+                                                                                                    </GeometryDrawing>
+                                                                                                    <GeometryDrawing Brush="{StaticResource WhiteTextBrush}">
+                                                                                                        <GeometryDrawing.Pen>
+                                                                                                            <Pen Brush="{StaticResource ButtonBorderBrush}" Thickness="1"/>
+                                                                                                        </GeometryDrawing.Pen>
+                                                                                                        <GeometryDrawing.Geometry>
+                                                                                                            <PathGeometry>
+                                                                                                                <PathGeometry.Figures>
+                                                                                                                    <PathFigure StartPoint="2 6" IsFilled="False" IsClosed="False">
+                                                                                                                        <LineSegment Point="3 6"/>
+                                                                                                                        <LineSegment Point="4 7"/>
+                                                                                                                        <LineSegment Point="5 9"/>
+                                                                                                                        <LineSegment Point="6 12"/>
+                                                                                                                        <LineSegment Point="7 4"/>
+                                                                                                                        <LineSegment Point="9 0"/>
+                                                                                                                    </PathFigure>
+                                                                                                                </PathGeometry.Figures>
+                                                                                                            </PathGeometry>
+                                                                                                        </GeometryDrawing.Geometry>
+                                                                                                    </GeometryDrawing>
+                                                                                                </DrawingGroup>
+                                                                                            </DrawingImage.Drawing>
+                                                                                        </DrawingImage>
+                                                                                    </Setter.Value>
+                                                                                </Setter>
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Image.Style>
+                                                            </Image>
+                                                            <TextBlock Text="{Binding}" FontSize="17"  Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center" FontWeight="Bold"/>
+                                                        </DockPanel>
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>    
+                                </ToggleButton>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.Style>
+        </ListBox>
+    </Grid>
+</Window>

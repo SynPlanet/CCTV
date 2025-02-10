@@ -1,0 +1,95 @@
+﻿<Window x:Class="Cam.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Cam"
+        Title="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message0}" Height="460" Width="300"   MinWidth="800" MinHeight="460" MaxHeight="460" Background="{StaticResource BackgroundWindowBrush}"
+        Loaded="Window_Loaded">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.ColumnSpan="4" Header="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message9}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="130"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message1}" Margin="3" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="pathToSave"  Grid.Column="1" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CurrentProfile.PathToSave, Mode=TwoWay,  UpdateSourceTrigger=LostFocus}" PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="pathToSave_TextChanged" />
+                <TextBlock Grid.Column="2" Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message2}" Margin="3" Style="{StaticResource HeaderTextStyle}"  VerticalAlignment="Center" TextAlignment="Right"/>
+                <TextBox x:Name="portToSave"  Grid.Column="3" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CurrentProfile.RemoteControlPort, Mode=OneWay, Converter={StaticResource portConverter}, UpdateSourceTrigger=LostFocus}" TextChanged="TextBoxPort_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBlock Grid.Row="1"  Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message6}" Margin="3" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="pathToPlay" IsEnabled="True" Grid.Row="1"  Grid.Column="1"  Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CurrentProfile.PathToPlay, Mode=TwoWay}"  PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="pathToPlay_TextChanged" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.ColumnSpan="4" Grid.Row="1"  Header="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message10}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="130"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message1}" Margin="3" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="pathToSaveAudio"  Grid.Column="1" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CurrentProfile.PathToSaveAudio, Mode=TwoWay,  UpdateSourceTrigger=LostFocus}" PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="pathToSave_TextChanged" IsEnabled="{Binding Path=CurrentProfile.AudioEnable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Grid.Row="1"  Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message6}" Margin="3" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBox x:Name="pathToPlayAudio" Grid.Row="1"  Grid.Column="1"  Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CurrentProfile.PathToPlayAudio, Mode=TwoWay}"  PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="pathToPlay_TextChanged" IsEnabled="{Binding Path=CurrentProfile.AudioEnable, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox Grid.Column="3" Grid.ColumnSpan="2"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=CurrentProfile.AudioEnable, Mode=TwoWay}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked">
+                    <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message11}" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center"/>
+                </CheckBox>
+            </Grid>
+        </GroupBox>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=CurrentProfile.IsArchiveStartup, Mode=TwoWay}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked">
+                <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message5}" Style="{StaticResource HeaderTextStyle}" VerticalAlignment="Center"/>
+            </CheckBox>
+            <Border Grid.Column="1"  BorderBrush="{StaticResource ElementBorderBrush}" BorderThickness="2" Margin="5" Padding="3">
+                <StackPanel>
+                    <TextBlock Text="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message8}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="test"  IsReadOnly="False" IsEditable="True" Style="{StaticResource ComboBoxStyle}" ItemsSource="{Binding Path=ProfileCollection}" SelectedItem="{Binding Path=CurrentProfile}" Text="{Binding Path=NewProfile, UpdateSourceTrigger=LostFocus}" PreviewKeyDown="ComboBox_PreviewKeyDown" SelectionChanged="test_SelectionChanged"/>
+                        <Button Grid.Column="1" Margin="5,0"  Content="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message7}" Style="{StaticResource ButtonStyle}" Click="Button_Click" />
+                    </Grid>
+                    
+                </StackPanel>
+            </Border>
+        </Grid>
+       
+        <Grid Grid.Row="3" Grid.ColumnSpan="4" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 50 0"  x:Name="btnSave" Content="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message3}"  Style="{StaticResource ButtonStyle}" Height="40" Width="100" Click="btnSave_Click" Visibility="Visible"/>
+            <Button Grid.Column="1" HorizontalAlignment="Left" Margin="50 0 0 0"  x:Name="btnCancel" Content="{Binding Source={x:Static controls:Local.Message}, Path=Settings_Message4}"  Style="{StaticResource ButtonStyle}" Height="40" Width="100" Click="btnCancel_Click" Visibility="Visible" IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>
